@@ -1,4 +1,4 @@
-﻿namespace Contracts.Models;
+﻿namespace Domain.Entities;
 
 public class GameInfo
 {
