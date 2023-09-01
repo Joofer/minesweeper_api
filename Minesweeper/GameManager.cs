@@ -5,6 +5,13 @@ namespace Minesweeper;
 
 public class GameManager : IGameManager
 {
+    /// <summary>
+    /// Генерирует игровое поле width x height с minesCount количеством мин.
+    /// </summary>
+    /// <param name="width">ширина</param>
+    /// <param name="height">высота</param>
+    /// <param name="minesCount">количество мин</param>
+    /// <returns>игровое поле width x height с minesCount количеством мин</returns>
     public static List<List<string>> CreateGame(int width, int height, int minesCount)
     {
         var field = List2d<int>.Identity(height, width);
