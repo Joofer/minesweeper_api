@@ -1,5 +1,5 @@
 ﻿// ReSharper disable InconsistentNaming
-namespace Contracts.Models.Responses;
+namespace Contracts.Responses;
 
 public class GameInfoResponse
 {

@@ -1,5 +1,5 @@
 ﻿// ReSharper disable InconsistentNaming
-namespace Contracts.Models.Requests;
+namespace Contracts.Requests;
 
 public class GameTurnRequest
 {
