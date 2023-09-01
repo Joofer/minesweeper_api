@@ -23,6 +23,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Presentation", "Presentatio
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "Tests\Tests.csproj", "{967C97A4-C2EF-4DEA-B596-9801388AED9D}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Minesweeper", "Minesweeper\Minesweeper.csproj", "{817A1767-03F4-44FD-ABFE-291179F9C9C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CollectionManager", "CollectionManager\CollectionManager.csproj", "{32F510DE-FB35-4BB0-B43D-BBDE65F5DAB6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +65,14 @@ Global
 		{967C97A4-C2EF-4DEA-B596-9801388AED9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{967C97A4-C2EF-4DEA-B596-9801388AED9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{967C97A4-C2EF-4DEA-B596-9801388AED9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{817A1767-03F4-44FD-ABFE-291179F9C9C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{817A1767-03F4-44FD-ABFE-291179F9C9C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{817A1767-03F4-44FD-ABFE-291179F9C9C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{817A1767-03F4-44FD-ABFE-291179F9C9C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32F510DE-FB35-4BB0-B43D-BBDE65F5DAB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32F510DE-FB35-4BB0-B43D-BBDE65F5DAB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32F510DE-FB35-4BB0-B43D-BBDE65F5DAB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32F510DE-FB35-4BB0-B43D-BBDE65F5DAB6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
