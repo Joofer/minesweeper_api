@@ -19,7 +19,7 @@ internal sealed class GameInfoService : IGameInfoService
 
     public async Task<GameInfoResponse> CreateGameAsync(NewGameRequest newGameRequest, CancellationToken cancellationToken = default)
     {
-        var field = List2d<string>.Identity(newGameRequest.height, newGameRequest.width);
+        var field = List2d<string>.Identity(newGameRequest.height, newGameRequest.width, " ");
 
         var gameInfo = new GameInfo
         {
