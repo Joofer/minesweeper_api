@@ -7,12 +7,18 @@ public static class List2d<T>
     /// </summary>
     /// <param name="rows">количество столбцов</param>
     /// <param name="columns">количество строк</param>
+    /// <param name="value">значение элемента (опционально)</param>
     /// <returns>2-мерный динамический массив размера rows x columns, инициализированный default значениями</returns>
-    public static List<List<T>> Identity(int rows, int columns)
+    public static List<List<T>> Identity(int rows, int columns, T value = default)
     {
         List<List<T>> list2d = new();
         for (var i = 0; i < rows; i++)
-            list2d.Add(new List<T>(new T[columns]));
+        {
+            var list = new List<T>();
+            for (var j = 0; j < columns; j++)
+                list.Add(value);
+            list2d.Add(list);
+        }
         return list2d;
     }
 
