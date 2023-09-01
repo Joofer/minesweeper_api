@@ -1,6 +1,6 @@
 ﻿namespace Domain.RepositoryAbstractions;
 
-public interface IRepositoryWrapperInterface
+public interface IRepositoryWrapper
 {
     public IGameInfoRepository GameInfoRepository { get; set; }
     public ITurnInfoRepository TurnInfoRepository { get; set; }
