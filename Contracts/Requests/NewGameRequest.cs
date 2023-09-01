@@ -3,7 +3,7 @@ namespace Contracts.Requests;
 
 public class NewGameRequest
 {
-    public uint width { get; set; }
-    public uint height { get; set; }
-    public uint mines_count { get; set; }
+    public int width { get; set; }
+    public int height { get; set; }
+    public int mines_count { get; set; }
 }
