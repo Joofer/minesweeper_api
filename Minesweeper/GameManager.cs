@@ -12,11 +12,11 @@ public class GameManager : IGameManager
     /// <param name="height">высота</param>
     /// <param name="minesCount">количество мин</param>
     /// <returns>игровое поле width x height с minesCount количеством мин</returns>
-    public static List<List<string>> CreateGame(int width, int height, int minesCount)
+    public static List<List<int>> CreateGame(int width, int height, int minesCount)
     {
         var field = List2d<int>.Identity(height, width);
         Populate(field, minesCount);
-        return List2d<int>.ToStringType(field);
+        return field;
     }
 
     /// <summary>
