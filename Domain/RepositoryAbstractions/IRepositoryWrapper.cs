@@ -2,8 +2,6 @@
 
 public interface IRepositoryWrapper
 {
-    public IGameInfoRepository GameInfoRepository { get; set; }
-    public ITurnInfoRepository TurnInfoRepository { get; set; }
-
+    public IGameInfoRepository GameInfoRepository { get; }
     Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
 }
