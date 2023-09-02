@@ -19,7 +19,7 @@ internal sealed class GameInfoService : IGameInfoService
 
     public async Task<GameInfoResponse> CreateGameAsync(NewGameRequest newGameRequest, CancellationToken cancellationToken = default)
     {
-        var field = List2d<string>.Identity(newGameRequest.height, newGameRequest.width, " ");
+        var field = List2d<int>.Identity(newGameRequest.height, newGameRequest.width, (int)BoxType.Closed);
 
         var gameInfo = new GameInfo
         {
@@ -35,13 +35,15 @@ internal sealed class GameInfoService : IGameInfoService
         await _repository.GameInfoRepository.AddAsync(gameInfo, cancellationToken);
         await _repository.SaveChangesAsync(cancellationToken);
 
+        var strField = List2d<string>.Identity(newGameRequest.height, newGameRequest.width, " ");
+
         return new GameInfoResponse
         {
             game_id = gameInfo.Guid,
             width = gameInfo.Width,
             height = gameInfo.Height,
             completed = false,
-            field = field
+            field = strField
         };
     }
 }
