@@ -2,5 +2,5 @@
 
 public interface ITurnManager
 {
-    static abstract bool Open(List<List<string>> field, List<List<string>> originField, int xPosition, int yPosition);
+    static abstract int Open(List<List<int>> field, List<List<int>> originField, int minesCount, int xPosition, int yPosition);
 }
