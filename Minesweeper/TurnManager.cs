@@ -13,66 +13,79 @@ public class TurnManager : ITurnManager
     /// <param name="yPosition">позиция ячейки x</param>
     /// <param name="xPosition">позиция ячейки y</param>
     /// <returns>true, если в ячейке есть мина, иначе - false</returns>
-    public static bool Open(List<List<string>> field, List<List<string>> originField, int yPosition, int xPosition)
+    public static int Open(List<List<int>> field, List<List<int>> originField, int minesCount, int yPosition, int xPosition)
     {
         if (IsOpened(field, yPosition, xPosition)) throw new BoxOpenedException(yPosition, xPosition);
-        
+
         field[yPosition][xPosition] = originField[yPosition][xPosition];
 
         switch (field[yPosition][xPosition])
         {
-            case "0":
-                try { Open(field, originField, yPosition - 1, xPosition - 1); }
+            case 0:
+                try { Open(field, originField, minesCount, yPosition - 1, xPosition - 1); }
                 catch (Exception)
                 {
                     // ignore
                 }
-                try { Open(field, originField, yPosition - 1, xPosition); }
+                try { Open(field, originField, minesCount, yPosition - 1, xPosition); }
                 catch (Exception)
                 {
                     // ignore
                 }
-                try { Open(field, originField, yPosition - 1, xPosition + 1); }
+                try { Open(field, originField, minesCount, yPosition, xPosition + 1); }
                 catch (Exception)
                 {
                     // ignore
                 }
-                try { Open(field, originField, yPosition, xPosition + 1); }
+                try { Open(field, originField, minesCount, yPosition + 1, xPosition + 1); }
                 catch (Exception)
                 {
                     // ignore
                 }
-                try { Open(field, originField, yPosition + 1, xPosition + 1); }
+                try { Open(field, originField, minesCount, yPosition + 1, xPosition); }
                 catch (Exception)
                 {
                     // ignore
                 }
-                try { Open(field, originField, yPosition + 1, xPosition); }
+                try { Open(field, originField, minesCount, yPosition + 1, xPosition - 1); }
                 catch (Exception)
                 {
                     // ignore
                 }
-                try { Open(field, originField, yPosition + 1, xPosition - 1); }
-                catch (Exception)
-                {
-                    // ignore
-                }
-                try { Open(field, originField, yPosition, xPosition - 1); }
+                try { Open(field, originField, minesCount, yPosition, xPosition - 1); }
                 catch (Exception)
                 {
                     // ignore
                 }
                 break;
 
-            case "X":
-                return true;
+            case (int)BoxType.Mine:
+                return (int)TurnResponseCode.Mine;
         }
 
-        return false;
+        return IsEnded(field, minesCount) ? (int)TurnResponseCode.End : (int)TurnResponseCode.Ok;
     }
 
-    private static bool IsOpened(List<List<string>> field, int xPosition, int yPosition)
+    /// <summary>
+    /// Проверяет открыты ли все ячейки, кроме ячеек с минами.
+    /// </summary>
+    /// <param name="field">игровое поле</param>
+    /// <param name="minesCount">количество мин</param>
+    /// <returns></returns>
+    private static bool IsEnded(IReadOnlyList<List<int>> field, int minesCount)
     {
-        return field[xPosition][yPosition] != " ";
+        return field.SelectMany(x => x).Count(x => x != (int)BoxType.Closed) == field.Count * field[0].Count - minesCount;
+    }
+
+    /// <summary>
+    /// Проверяет открыта ли ячейка.
+    /// </summary>
+    /// <param name="field">игровое поле</param>
+    /// <param name="xPosition">позиция ячейки x</param>
+    /// <param name="yPosition">позиция ячейки y</param>
+    /// <returns></returns>
+    private static bool IsOpened(IReadOnlyList<List<int>> field, int xPosition, int yPosition)
+    {
+        return field[xPosition][yPosition] != (int)BoxType.Closed;
     }
 }
