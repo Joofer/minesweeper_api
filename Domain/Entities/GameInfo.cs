@@ -7,7 +7,7 @@ public class GameInfo
     public int Height { get; set; }
     public int MinesCount { get; set; }
     public bool Completed { get; set; }
-    public List<List<string>> Field { get; set; } = new();
-    public List<List<string>> OriginField { get; set; } = new();
+    public List<List<int>> Field { get; set; } = new();
+    public List<List<int>> OriginField { get; set; } = new();
     public List<TurnInfo> TurnInfos { get; set; } = new();
 }
