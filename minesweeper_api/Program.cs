@@ -9,7 +9,7 @@ using Services.Abstractions;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<RepositoryDbContext>(options =>
-    options.UseCosmos(builder.Configuration.GetSection("AzureCDB")["Endpoint"], builder.Configuration.GetSection("AzureCDB")["Key"], builder.Configuration.GetSection("AzureCDB")["Db"]));
+    options.UseCosmos(builder.Configuration["AzureCDB:Endpoint"], builder.Configuration["AzureCDB:Key"], builder.Configuration["AzureCDB:Db"]));
 
 builder.Services.AddScoped<IServiceWrapper, ServiceWrapper>();
 builder.Services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
