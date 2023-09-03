@@ -5,6 +5,8 @@ using Services.Abstractions;
 
 namespace Presentation.Controllers;
 
+[Route("api/[controller]")]
+[ApiController]
 public class GameInfoController : ControllerBase
 {
     private readonly IServiceWrapper _service;
