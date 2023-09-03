@@ -1,5 +1,4 @@
 ﻿using Domain.Entities;
-using MaikeBing.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace Persistence;
@@ -12,9 +11,12 @@ public class RepositoryDbContext : DbContext
     {
     }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) =>
-        optionsBuilder.UseLiteDB("liteDb.db");
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<GameInfo>()
+            .ToContainer("GameInfos")
+            .HasPartitionKey(c => c.Guid);
 
-    protected override void OnModelCreating(ModelBuilder modelBuilder) =>
-        modelBuilder.ApplyConfigurationsFromAssembly(typeof(RepositoryDbContext).Assembly);
+        modelBuilder.Entity<GameInfo>().OwnsMany(p => p.TurnInfos);
+    }
 }
