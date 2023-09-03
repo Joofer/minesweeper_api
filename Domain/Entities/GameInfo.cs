@@ -1,7 +1,10 @@
-﻿namespace Domain.Entities;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Domain.Entities;
 
 public class GameInfo
 {
+    [Key]
     public Guid Guid { get; set; }
     public int Width { get; set; }
     public int Height { get; set; }
