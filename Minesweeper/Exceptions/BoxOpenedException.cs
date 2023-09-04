@@ -2,7 +2,7 @@
 
 public sealed class BoxOpenedException : BadRequestException
 {
-    public BoxOpenedException(int xPosition, int yPosition) : base($"Bad request: ячейка ({xPosition}, {yPosition}) уже открыта.")
+    public BoxOpenedException(int yPosition, int xPosition) : base($"Bad request: ячейка ({yPosition}, {yPosition}) уже открыта.")
     {
     }
 }
