@@ -5,7 +5,7 @@ using Services.Abstractions;
 
 namespace Presentation.Controllers;
 
-[Route("api/[controller]")]
+[Route("/")]
 [ApiController]
 public class GameInfoController : ControllerBase
 {
@@ -14,7 +14,7 @@ public class GameInfoController : ControllerBase
     public GameInfoController(IServiceWrapper service) =>
         _service = service;
 
-    [HttpPost]
+    [HttpPost("new")]
     public async Task<IActionResult> NewAsync(NewGameRequest newGameRequest, CancellationToken cancellationToken)
     {
         try
