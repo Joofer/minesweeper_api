@@ -5,6 +5,8 @@ using Services.Abstractions;
 
 namespace Presentation.Controllers;
 
+[Route("/")]
+[ApiController]
 public class GameInfoController : ControllerBase
 {
     private readonly IServiceWrapper _service;
@@ -12,7 +14,7 @@ public class GameInfoController : ControllerBase
     public GameInfoController(IServiceWrapper service) =>
         _service = service;
 
-    [HttpPost]
+    [HttpPost("new")]
     public async Task<IActionResult> NewAsync(NewGameRequest newGameRequest, CancellationToken cancellationToken)
     {
         try

@@ -32,7 +32,7 @@ internal sealed class GameInfoService : IGameInfoService
                 GameManager.CreateGame(newGameRequest.width, newGameRequest.height, newGameRequest.mines_count)
         };
 
-        await _repository.GameInfoRepository.AddAsync(gameInfo, cancellationToken);
+        _repository.GameInfoRepository.Add(gameInfo);
         await _repository.SaveChangesAsync(cancellationToken);
 
         var strField = List2d<string>.Identity(newGameRequest.height, newGameRequest.width, " ");
@@ -42,6 +42,7 @@ internal sealed class GameInfoService : IGameInfoService
             game_id = gameInfo.Guid,
             width = gameInfo.Width,
             height = gameInfo.Height,
+            mines_count = gameInfo.MinesCount,
             completed = false,
             field = strField
         };
