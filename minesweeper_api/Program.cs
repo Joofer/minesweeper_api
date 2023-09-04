@@ -19,12 +19,28 @@ builder.Services.AddMvc().AddApplicationPart(typeof(Presentation.Controllers.Gam
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(setup => setup.SwaggerDoc("v1", new OpenApiInfo { Title = "Minesweeper API", Version = "v1" }));
 
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(
+        o =>
+        {
+            o.WithOrigins("https://localhost:7258", "http://localhost:5106")
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader();
+        });
+});
+
 var app = builder.Build();
 
 app.UseSwagger();
 app.UseSwaggerUI(options => options.SwaggerEndpoint("/swagger/v1/swagger.json", "Minesweeper API v1"));
 
 app.UseHttpsRedirection();
+
+app.UseRouting();
+
+app.UseCors();
 
 app.UseAuthorization();
 
