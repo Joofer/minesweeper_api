@@ -47,13 +47,13 @@ internal sealed class TurnInfoService : ITurnInfoService
         {
             for (var i = 0; i < row.Count; i++)
             {
-                if (row[i] == BoxType.Closed.ToString())
-                    row[i] = row[i].Replace(BoxType.Closed.ToString(), " ");
+                if (row[i] == ((int)BoxType.Closed).ToString())
+                    row[i] = row[i].Replace(((int)BoxType.Closed).ToString(), " ");
                 else
                     row[i] = result switch
                     {
-                        (int)TurnResponseCode.Mine => row[i].Replace(BoxType.Mine.ToString(), "X"),
-                        (int)TurnResponseCode.End => row[i].Replace(BoxType.Mine.ToString(), "M"),
+                        (int)TurnResponseCode.Mine => row[i].Replace(((int)BoxType.Mine).ToString(), "X"),
+                        (int)TurnResponseCode.End => row[i].Replace(((int)BoxType.Mine).ToString(), "M"),
                         _ => row[i]
                     };
             }
