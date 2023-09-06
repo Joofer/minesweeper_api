@@ -1,5 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Repository.Tests.Common;
+﻿using Common;
+using Microsoft.EntityFrameworkCore;
 
 namespace Repository.Tests;
 

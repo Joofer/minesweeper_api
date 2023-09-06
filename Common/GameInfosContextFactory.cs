@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Persistence;
 
-namespace Repository.Tests.Common;
+namespace Common;
 
 public class GameInfosContextFactory
 {

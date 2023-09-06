@@ -1,4 +1,4 @@
-﻿using Repository.Tests.Common;
+﻿using Common;
 
 namespace Repository.Tests;
 

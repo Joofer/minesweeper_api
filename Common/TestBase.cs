@@ -2,7 +2,7 @@
 using Persistence;
 using Persistence.Repositories;
 
-namespace Repository.Tests.Common;
+namespace Common;
 
 public abstract class TestBase
 {
