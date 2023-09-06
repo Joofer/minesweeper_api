@@ -2,7 +2,6 @@
 using Contracts.Requests;
 using Domain.Entities;
 using Domain.Exceptions;
-using Microsoft.EntityFrameworkCore;
 using Minesweeper.Exceptions;
 
 namespace Services.Tests;
