@@ -8,11 +8,12 @@ public class FindGameInfo : TestBase
     public async Task ShouldFindGameInfoAsync()
     {
         // Arrange
-        var guid = GameInfosContextFactory.GameInfoA.Guid;
-        var original = GameInfosContextFactory.GameInfoA;
+        var original = GameInfoSamples.GetA();
+        Context.GameInfos.Add(original);
+        await Context.SaveChangesAsync();
 
         // Act
-        var repositoryFound = await RepositoryWrapper.GameInfoRepository.FindAsync(guid);
+        var repositoryFound = await RepositoryWrapper.GameInfoRepository.FindAsync(original.Guid);
 
         // Assert
         Assert.Equal(original, repositoryFound);
