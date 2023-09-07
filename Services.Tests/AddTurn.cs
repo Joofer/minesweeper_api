@@ -1,6 +1,5 @@
 ﻿using Common;
 using Contracts.Requests;
-using Domain.Entities;
 using Domain.Exceptions;
 using Minesweeper.Exceptions;
 
@@ -8,21 +7,16 @@ namespace Services.Tests;
 
 public class AddTurn : TestBase
 {
-    private readonly GameInfo _gameInfo = GameInfoSamples.GetA();
-
-    public AddTurn()
-    {
-        Context.GameInfos.Add(_gameInfo);
-        Context.SaveChanges();
-    }
-
     [Fact]
     public async Task ShouldAddTurnAsync()
     {
         // Arrange
+        var gameInfo = GameInfoSamples.GetA();
+        Context.GameInfos.Add(gameInfo);
+        await Context.SaveChangesAsync();
         var gameTurnRequest = new GameTurnRequest
         {
-            game_id = _gameInfo.Guid,
+            game_id = gameInfo.Guid,
             row = 0,
             col = 0
         };
@@ -31,19 +25,23 @@ public class AddTurn : TestBase
         var result = await ServiceWrapper.TurnInfoService.AddTurnAsync(gameTurnRequest);
 
         // Assert
-        Assert.Equal(_gameInfo.Width, result.width);
-        Assert.Equal(_gameInfo.Height, result.height);
-        Assert.Equal(_gameInfo.MinesCount, result.mines_count);
-        Assert.Equal(_gameInfo.Completed, result.completed);
+        Assert.Equal(gameInfo.Width, result.width);
+        Assert.Equal(gameInfo.Height, result.height);
+        Assert.Equal(gameInfo.MinesCount, result.mines_count);
+        Assert.Equal(gameInfo.Completed, result.completed);
     }
 
     [Fact]
     public async Task ShouldThrowBoxOpenedException()
     {
         // Arrange
+        var gameInfo = GameInfoSamples.GetA();
+        gameInfo.Field[0][0] = 0;
+        Context.GameInfos.Add(gameInfo);
+        await Context.SaveChangesAsync();
         var gameTurnRequest = new GameTurnRequest
         {
-            game_id = _gameInfo.Guid,
+            game_id = gameInfo.Guid,
             row = 0,
             col = 0
         };
@@ -57,12 +55,13 @@ public class AddTurn : TestBase
     public async Task ShouldThrowGameEndedException()
     {
         // Arrange
-        _gameInfo.Completed = true;
-        Context.GameInfos.Update(_gameInfo);
+        var gameInfo = GameInfoSamples.GetA();
+        gameInfo.Completed = true;
+        Context.GameInfos.Add(gameInfo);
         await Context.SaveChangesAsync();
         var gameTurnRequest = new GameTurnRequest
         {
-            game_id = _gameInfo.Guid,
+            game_id = gameInfo.Guid,
             row = 0,
             col = 0
         };

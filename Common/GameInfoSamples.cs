@@ -1,4 +1,5 @@
 ﻿using Domain.Entities;
+using Mapster;
 
 namespace Common;
 
@@ -553,14 +554,14 @@ public class GameInfoSamples
 
     public static GameInfo GetA()
     {
-        var gameInfo = GameInfoA;
+        var gameInfo = GameInfoA.Adapt<GameInfo>();
         gameInfo.Guid = Guid.NewGuid();
         return gameInfo;
     }
 
     public static GameInfo GetB()
     {
-        var gameInfo = GameInfoB;
+        var gameInfo = GameInfoB.Adapt<GameInfo>();
         gameInfo.Guid = Guid.NewGuid();
         return gameInfo;
     }
