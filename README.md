@@ -1,4 +1,6 @@
 # minesweeper_api
+[![Build and deploy .NET Core application to Web App minesweeperapi](https://github.com/Joofer/minesweeper_api/actions/workflows/minesweeperapi.yml/badge.svg)](https://github.com/Joofer/minesweeper_api/actions/workflows/minesweeperapi.yml)
+
 API для онлайн-игры Сапер ([ссылка](https://minesweeper-test.studiotg.ru/))
 
 ## Методы REST API
