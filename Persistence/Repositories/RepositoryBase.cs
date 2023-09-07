@@ -15,12 +15,11 @@ public abstract class RepositoryBase<TEntity> : IRepositoryBase<TEntity> where T
     await Context.Set<TEntity>().ToListAsync(cancellationToken);
 
     public async Task<TEntity> FindAsync(object keyValue, CancellationToken cancellationToken = default) =>
-        await Context.Set<TEntity>().FindAsync(keyValue, cancellationToken) ?? throw new InvalidOperationException();
+        (await Context.Set<TEntity>().FindAsync(keyValue, cancellationToken))!;
 
     public async Task<TEntity> FindAsync(Expression<Func<TEntity, bool>> expression,
         CancellationToken cancellationToken = default) =>
-        await Context.Set<TEntity>().FirstOrDefaultAsync(expression, cancellationToken) ??
-        throw new InvalidOperationException();
+        (await Context.Set<TEntity>().FirstOrDefaultAsync(expression, cancellationToken))!;
 
     public void Add(TEntity entity) =>
         Context.Set<TEntity>().Add(entity);
