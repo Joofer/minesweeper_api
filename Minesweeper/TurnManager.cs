@@ -20,7 +20,7 @@ public class TurnManager : ITurnManager
         int yPosition)
     {
         var result = Open(field, originField, minesCount, xPosition, yPosition);
-        if (result == (int)TurnResponseCode.End)
+        if (result != (int)TurnResponseCode.Ok)
             Reveal(field, originField);
         return result;
     }
