@@ -35,6 +35,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "Common\Common.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Controllers.Tests", "Controllers.Tests\Controllers.Tests.csproj", "{894C9B20-078F-431E-83BA-3A503CB9D298}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CollectionManager.Tests", "CollectionManager.Tests\CollectionManager.Tests.csproj", "{7609360C-EF81-49AE-8183-D370EEFF0031}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Minesweeper.Game.Core.Tests", "Minesweeper.Game.Core.Tests\Minesweeper.Game.Core.Tests.csproj", "{4E3D4A64-D21E-44D4-80BF-C5D98CCACAA8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +97,14 @@ Global
 		{894C9B20-078F-431E-83BA-3A503CB9D298}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{894C9B20-078F-431E-83BA-3A503CB9D298}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{894C9B20-078F-431E-83BA-3A503CB9D298}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7609360C-EF81-49AE-8183-D370EEFF0031}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7609360C-EF81-49AE-8183-D370EEFF0031}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7609360C-EF81-49AE-8183-D370EEFF0031}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7609360C-EF81-49AE-8183-D370EEFF0031}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E3D4A64-D21E-44D4-80BF-C5D98CCACAA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E3D4A64-D21E-44D4-80BF-C5D98CCACAA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E3D4A64-D21E-44D4-80BF-C5D98CCACAA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E3D4A64-D21E-44D4-80BF-C5D98CCACAA8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -108,6 +120,8 @@ Global
 		{F3096B77-A297-46F5-B751-D291EEA5C8D8} = {C296DDE9-537F-4F60-8A60-C5182B548B78}
 		{3CC56180-8D03-456C-A6CB-065F0A3CEEDB} = {C296DDE9-537F-4F60-8A60-C5182B548B78}
 		{894C9B20-078F-431E-83BA-3A503CB9D298} = {C296DDE9-537F-4F60-8A60-C5182B548B78}
+		{7609360C-EF81-49AE-8183-D370EEFF0031} = {C296DDE9-537F-4F60-8A60-C5182B548B78}
+		{4E3D4A64-D21E-44D4-80BF-C5D98CCACAA8} = {C296DDE9-537F-4F60-8A60-C5182B548B78}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {68F75FFB-4DD7-4E55-A741-34C8485AB5C6}
