@@ -1,4 +1,4 @@
-﻿namespace Minesweeper.Exceptions;
+﻿namespace Minesweeper.Game.Core.Exceptions;
 
 public abstract class BadRequestException : Exception
 {

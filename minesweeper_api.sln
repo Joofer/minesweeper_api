@@ -21,7 +21,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persistence", "Persistence\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Presentation", "Presentation\Presentation.csproj", "{E57F0D4B-FA69-4A2D-A108-1F533BD5BB7A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Minesweeper", "Minesweeper\Minesweeper.csproj", "{817A1767-03F4-44FD-ABFE-291179F9C9C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Minesweeper.Game.Core", "Minesweeper\Minesweeper.Game.Core.csproj", "{817A1767-03F4-44FD-ABFE-291179F9C9C6}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CollectionManager", "CollectionManager\CollectionManager.csproj", "{32F510DE-FB35-4BB0-B43D-BBDE65F5DAB6}"
 EndProject
@@ -33,7 +33,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services.Tests", "Services.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "Common\Common.csproj", "{3CC56180-8D03-456C-A6CB-065F0A3CEEDB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controllers.Tests", "Controllers.Tests\Controllers.Tests.csproj", "{894C9B20-078F-431E-83BA-3A503CB9D298}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Controllers.Tests", "Controllers.Tests\Controllers.Tests.csproj", "{894C9B20-078F-431E-83BA-3A503CB9D298}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
