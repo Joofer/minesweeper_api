@@ -1,7 +1,7 @@
 ﻿using Common;
 using Contracts.Requests;
 using Domain.Exceptions;
-using Minesweeper.Exceptions;
+using Minesweeper.Game.Core.Exceptions;
 
 namespace Services.Tests;
 

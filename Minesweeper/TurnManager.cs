@@ -1,7 +1,7 @@
-﻿using Minesweeper.Abstractions;
-using Minesweeper.Exceptions;
+﻿using Minesweeper.Game.Core.Abstractions;
+using Minesweeper.Game.Core.Exceptions;
 
-namespace Minesweeper;
+namespace Minesweeper.Game.Core;
 
 public class TurnManager : ITurnManager
 {
