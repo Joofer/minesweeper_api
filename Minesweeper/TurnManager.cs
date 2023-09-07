@@ -1,10 +1,30 @@
-﻿using Minesweeper.Game.Core.Abstractions;
+﻿using CollectionManager;
+using Mapster;
+using Minesweeper.Game.Core.Abstractions;
 using Minesweeper.Game.Core.Exceptions;
 
 namespace Minesweeper.Game.Core;
 
 public class TurnManager : ITurnManager
 {
+    /// <summary>
+    /// Делает ход в ячейке (xPosition, yPosition).
+    /// </summary>
+    /// <param name="field">игровое поле</param>
+    /// <param name="originField">полное поле</param>
+    /// <param name="minesCount">количество мин</param>
+    /// <param name="xPosition">позиция ячейки x</param>
+    /// <param name="yPosition">позиция ячейки y</param>
+    /// <returns>true, если в ячейке есть мина, иначе - false</returns>
+    public static int Turn(List<List<int>> field, List<List<int>> originField, int minesCount, int xPosition,
+        int yPosition)
+    {
+        var result = Open(field, originField, minesCount, xPosition, yPosition);
+        if (result == (int)TurnResponseCode.End)
+            Reveal(field, originField);
+        return result;
+    }
+
     /// <summary>
     /// Открывает ячейку (xPosition, yPosition).
     /// </summary>
@@ -14,7 +34,7 @@ public class TurnManager : ITurnManager
     /// <param name="xPosition">позиция ячейки x</param>
     /// <param name="yPosition">позиция ячейки y</param>
     /// <returns>true, если в ячейке есть мина, иначе - false</returns>
-    public static int Open(List<List<int>> field, List<List<int>> originField, int minesCount, int xPosition, int yPosition)
+    private static int Open(List<List<int>> field, List<List<int>> originField, int minesCount, int xPosition, int yPosition)
     {
         if (IsOpened(field, yPosition, xPosition)) throw new BoxOpenedException(xPosition, yPosition);
 
@@ -65,6 +85,18 @@ public class TurnManager : ITurnManager
         }
 
         return IsEnded(field, minesCount) ? (int)TurnResponseCode.End : (int)TurnResponseCode.Ok;
+    }
+
+    /// <summary>
+    /// Открывает все ячейки.
+    /// </summary>
+    /// <param name="field">игровое поле</param>
+    /// <param name="originField">полное поле</param>
+    private static void Reveal(IReadOnlyList<List<int>> field, IReadOnlyList<List<int>> originField)
+    {
+        for (var i = 0; i < field.Count; i++)
+            for (var j = 0; j < field[0].Count; j++)
+                field[i][j] = originField[i][j];
     }
 
     /// <summary>

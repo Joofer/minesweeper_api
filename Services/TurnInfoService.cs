@@ -37,7 +37,7 @@ internal sealed class TurnInfoService : ITurnInfoService
 
         gameInfo.TurnInfos.Add(turnInfo);
 
-        var result = TurnManager.Open(gameInfo.Field, gameInfo.OriginField, gameInfo.MinesCount, gameTurnRequest.col, gameTurnRequest.row);
+        var result = TurnManager.Turn(gameInfo.Field, gameInfo.OriginField, gameInfo.MinesCount, gameTurnRequest.col, gameTurnRequest.row);
         if (result != (int)TurnResponseCode.Ok) gameInfo.Completed = true;
 
         await _repository.SaveChangesAsync(cancellationToken);
