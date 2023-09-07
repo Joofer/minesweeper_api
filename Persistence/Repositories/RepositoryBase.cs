@@ -1,6 +1,6 @@
-﻿using System.Linq.Expressions;
-using Domain.RepositoryAbstractions;
+﻿using Domain.RepositoryAbstractions;
 using Microsoft.EntityFrameworkCore;
+using System.Linq.Expressions;
 
 namespace Persistence.Repositories;
 

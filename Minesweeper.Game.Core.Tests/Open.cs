@@ -1,5 +1,5 @@
 ﻿using Common;
-using Minesweeper.Exceptions;
+using Minesweeper.Game.Core.Exceptions;
 
 namespace Minesweeper.Game.Core.Tests;
 

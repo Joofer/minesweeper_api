@@ -3,7 +3,6 @@ using Contracts.Requests;
 using Contracts.Responses;
 using Domain.Entities;
 using Domain.RepositoryAbstractions;
-using Minesweeper;
 using Minesweeper.Game.Core;
 using Services.Abstractions;
 
