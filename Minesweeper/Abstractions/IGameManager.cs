@@ -1,4 +1,4 @@
-﻿namespace Minesweeper.Abstractions;
+﻿namespace Minesweeper.Game.Core.Abstractions;
 
 public interface IGameManager
 {

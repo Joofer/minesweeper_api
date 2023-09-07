@@ -1,7 +1,7 @@
 ﻿using CollectionManager;
-using Minesweeper.Abstractions;
+using Minesweeper.Game.Core.Abstractions;
 
-namespace Minesweeper;
+namespace Minesweeper.Game.Core;
 
 public class GameManager : IGameManager
 {

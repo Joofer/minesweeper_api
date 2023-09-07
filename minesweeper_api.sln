@@ -21,7 +21,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persistence", "Persistence\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Presentation", "Presentation\Presentation.csproj", "{E57F0D4B-FA69-4A2D-A108-1F533BD5BB7A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Minesweeper", "Minesweeper\Minesweeper.csproj", "{817A1767-03F4-44FD-ABFE-291179F9C9C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Minesweeper.Game.Core", "Minesweeper\Minesweeper.Game.Core.csproj", "{817A1767-03F4-44FD-ABFE-291179F9C9C6}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CollectionManager", "CollectionManager\CollectionManager.csproj", "{32F510DE-FB35-4BB0-B43D-BBDE65F5DAB6}"
 EndProject

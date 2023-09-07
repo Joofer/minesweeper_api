@@ -1,4 +1,4 @@
-﻿namespace Minesweeper.Exceptions;
+﻿namespace Minesweeper.Game.Core.Exceptions;
 
 public sealed class BoxOpenedException : BadRequestException
 {
