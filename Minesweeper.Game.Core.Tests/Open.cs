@@ -12,7 +12,7 @@ public class Open
         var gameInfo = GameInfoSamples.GetA();
 
         // Act
-        var result = TurnManager.Open(gameInfo.Field, gameInfo.OriginField, gameInfo.MinesCount, 0, 0);
+        var result = TurnManager.Turn(gameInfo.Field, gameInfo.OriginField, gameInfo.MinesCount, 0, 0);
 
         // Assert
         Assert.Equal((int)TurnResponseCode.Ok, result);
@@ -28,7 +28,7 @@ public class Open
         var xPos = 2;
 
         // Act
-        var result = TurnManager.Open(gameInfo.Field, gameInfo.OriginField, gameInfo.MinesCount, xPos, yPos);
+        var result = TurnManager.Turn(gameInfo.Field, gameInfo.OriginField, gameInfo.MinesCount, xPos, yPos);
 
         // Assert
         Assert.Equal((int)TurnResponseCode.Mine, result);
@@ -50,14 +50,15 @@ public class Open
         {
             new() { 0, 0, 0 },
             new() { 0, 1, 1 },
-            new() { 0, 1, -1 },
+            new() { 0, 1, (int)BoxType.Mine },
         };
 
         // Act
-        var result = TurnManager.Open(gameInfo.Field, gameInfo.OriginField, gameInfo.MinesCount, 0, 0);
+        var result = TurnManager.Turn(gameInfo.Field, gameInfo.OriginField, gameInfo.MinesCount, 0, 0);
 
         // Assert
         Assert.Equal((int)TurnResponseCode.End, result);
+        Assert.DoesNotContain((int)BoxType.Closed, gameInfo.Field.SelectMany(x => x).ToList());
     }
 
     [Fact]
@@ -70,6 +71,6 @@ public class Open
         // Act
 
         // Assert
-        Assert.Throws<BoxOpenedException>(() => TurnManager.Open(gameInfo.Field, gameInfo.OriginField, gameInfo.MinesCount, 0, 0));
+        Assert.Throws<BoxOpenedException>(() => TurnManager.Turn(gameInfo.Field, gameInfo.OriginField, gameInfo.MinesCount, 0, 0));
     }
 }

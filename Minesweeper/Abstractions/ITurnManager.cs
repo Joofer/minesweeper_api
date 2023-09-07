@@ -2,5 +2,5 @@
 
 public interface ITurnManager
 {
-    static abstract int Open(List<List<int>> field, List<List<int>> originField, int minesCount, int xPosition, int yPosition);
+    static abstract int Turn(List<List<int>> field, List<List<int>> originField, int minesCount, int xPosition, int yPosition);
 }
