@@ -3,6 +3,13 @@
 
 API для онлайн-игры Сапер ([ссылка](https://minesweeper-test.studiotg.ru/))
 
+## Тестирование
+Для тестирования приложения потребуется локально развернутая база данных Cosmos DB ([установка](https://learn.microsoft.com/en-us/azure/cosmos-db/how-to-develop-emulator?tabs=windows%2Ccsharp&pivots=api-nosql)).
+
+После установки нужно запустить приложение и создать базу данных ```MinesweeperDb``` (NOTE: можно выбрать любое другое имя, также указав его в ```appsettings.json```) через обозреватель данных Cosmos DB ([локальная ссылка](https://localhost:8081/_explorer/index.html)).
+
+Также можно воспольоваться облачным сервисом Azure Cosmos DB ([ссылка](https://azure.microsoft.com/en-us/products/cosmos-db/)).
+
 ## Методы REST API
 | Метод | Описание | Принимаемое значение | Возвращаемое значение | Значение ошибки |
 | --- | --- | --- | --- | --- |
